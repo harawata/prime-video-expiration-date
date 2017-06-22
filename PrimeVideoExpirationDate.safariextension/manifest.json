@@ -3,7 +3,6 @@
   "name": "Amazon Prime （プライム）ビデオ見放題作品終了日表示",
   "version": "1.0.0",
 
-  "default_locale": "ja",
   "description": "Amazon ビデオの 30 日以内にプライム会員特典ではなくなる作品のリストに見放題終了日を表示します。",
   // "icons": {...},
 
