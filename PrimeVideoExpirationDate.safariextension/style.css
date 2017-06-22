@@ -1,0 +1,15 @@
+@CHARSET "utf-8";
+
+.expirationDate {
+  position: fixed;
+  z-index: 10000;
+  background-color: #303333;
+  color: #fcffff;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  opacity: 0.9;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  font-family: "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, sans-serif;
+  font-weight: 700;
+}
