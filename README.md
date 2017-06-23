@@ -24,13 +24,13 @@ Amazon ビデオ（Amazon Prime Video）では、30 日以内に見放題が終�
 
 ### Chrome
 
-1. この repository を clone します。
+1. [Releases](https://github.com/harawata/prime-video-expiration-date/releases/) から最新の .zip アーカイブをダウンロードして解凍します。
 2. chrome://extensions を開いて "パッケージ化されていない拡張機能を読み込む..." ボタンを押します。
 3. ディレクトリ選択ダイアログで `PrimeVideoExpirationDate.safariextension` ディレクトリを選択します。
 
 ### Safari
 
-1. この repository を clone します。
+1. [Releases](https://github.com/harawata/prime-video-expiration-date/releases/) から最新の .zip アーカイブをダウンロードして解凍します。
 2. Safari の開発メニューから "機能拡張ビルダー" を選びます。
 3. 左下の "+" ボタンを押して "機能拡張を追加…" を選びます。
 4. `PrimeVideoExpirationDate.safariextension` ディレクトリを選択します。
