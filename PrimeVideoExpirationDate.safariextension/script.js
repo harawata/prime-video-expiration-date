@@ -37,5 +37,5 @@ $(function(){
     mouseleave: function() {
       tooltip.hide();
     }
-  }, "a > img[alt='商品の詳細']");
+  }, "a > img[src*='Prime-Sash']");
 });
