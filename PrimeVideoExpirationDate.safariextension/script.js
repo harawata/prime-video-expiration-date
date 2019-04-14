@@ -9,33 +9,41 @@ $(function(){
   var cachedMsg;
   var tooltip = $("<div>")
     .addClass("expirationDate").appendTo(document.body);
+  tooltip.showMsg = function(x, y, msg) {
+    tooltip.empty().append(msg).css("top", y).css("left", x).show();
+  };
 
   $(document).on({
     mouseenter: function(e) {
       var x = e.pageX - $(document).scrollLeft();
       var y = e.pageY - $(document).scrollTop();
-      // Maybe faster than looking for .parents("li[data-asin]") ?
-      var asin = $(this).parent().attr("href").replace(/^.*\/dp\/(.*)\/.*$/g, "$1");
+      var asin = $(this).closest("div[data-asin]").attr("data-asin")
       if (asin == cachedAsin) {
         // Avoid spamming the server.
-        tooltip.html(cachedMsg).css("top", y).css("left", x).show();
+        tooltip.showMsg(x, y, cachedMsg);
         return;
       }
-      $.getJSON("https://www.amazon.co.jp/gp/video/beard", {
-        "ASIN": asin,
-        "json": 1
+      $.get("https://www.amazon.co.jp/gp/video/hover/" + escape(asin), {
+        format: "json",
+        refTag: "dv-hover",
+        requesterPageType: "Browse"
       }, function(data){
-        var newMsg = "";
-        if(data.orangeBar) {
-          newMsg = data.title + data.orangeBar;
-          tooltip.html(newMsg).css("top", y).css("left", x).show();
-        }
+        // Trim tail junk in data.
+        var json = data.replace(/[^\]]+$/, "");
+        var res = JSON.parse(json);
+        var doc = $(res[1]);
+        var title = doc.find("h1");
+        var expiration = doc.find("span.av-alert-inline-block--warning");
+        var newMsg = $('<div>')
+          .append(title)
+          .append(expiration);
+        tooltip.showMsg(x, y, newMsg);
         cachedMsg = newMsg;
         cachedAsin = asin;
-      });
+      }, "text");
     },
     mouseleave: function() {
       tooltip.hide();
     }
-  }, "a > img[src*='Prime-Sash']");
+  }, "div[data-asin] a img.s-image");
 });
