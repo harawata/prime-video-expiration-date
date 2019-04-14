@@ -35,7 +35,7 @@
 		</array>
 		<key>Whitelist</key>
 		<array>
-			<string>https://www.amazon.co.jp/s/*</string>
+			<string>https://www.amazon.co.jp/s?*</string>
 		</array>
 	</dict>
 	<key>Description</key>

@@ -13,3 +13,16 @@
   font-family: "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, sans-serif;
   font-weight: 700;
 }
+
+.expirationDate h1 {
+  font-size: 1.1em;
+}
+
+.expirationDate h1 a {
+  color: #ffffff;
+}
+
+.expirationDate .av-alert-inline-block--warning {
+  color: #fcebad;
+}
+
